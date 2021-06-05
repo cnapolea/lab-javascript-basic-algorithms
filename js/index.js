@@ -40,6 +40,8 @@ console.log(hacker2Reverse);
 
 for (let i = 0; i < hacker1Length; i++) {
 
+    if (hacker1Length < 1 && hacker2Length < 1) return;
+
     if (hacker1Length < 2 && hacker2Length < 2) {
         let result = hacker1[i].localeCompare(hacker2[i]);
         
@@ -60,14 +62,14 @@ for (let i = 0; i < hacker1Length; i++) {
         switch (result) {
             case -1: 
                 console.log(`The driver's name goes first.`);
-                return;
+                break;
             case 1: 
                 console.log(`Yo, the navigator goes first definitely.`);
                 return;
             default:
                 if (i === (hacker1Length-1)) {
                     console.log(`What?! You both have the same name?`);
-                    return;
+                    break;
                 } else continue;
         }
     }
